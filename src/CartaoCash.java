@@ -24,7 +24,7 @@ public class CartaoCash extends CartaoPrePago{
 	@Override
 	public String toString() {
 		return "CartaoCash [tipo=" + tipo + ", numerocartao=" + numerocartao + ", nomeTitular=" + nomeTitular
-				+ ", anoValidade=" + anoValidade + ", mesValidade=" + mesValidade + ", saldo=" + saldo + "]";
+				+ ", anoValidade=" + anoValidade + ", mesValidade=" + mesValidade + ", saldo=" + String.format("%.2f",saldo) + "]";
 	}
 	
 	
