@@ -1,7 +1,7 @@
 
 public class CartaoCash extends CartaoPrePago{
 	
-	protected int tipo;
+	private int tipo;
 
 	public CartaoCash(String numerocartao, String nomeTitular, int anoValidade, int mesValidade, double saldo, int tipo) {
 		
@@ -12,10 +12,11 @@ public class CartaoCash extends CartaoPrePago{
 
 	public boolean Comprar(double valor, int tip) {
 		tipo = tip;
+		super.saldo = super.saldo-valor;
 		if (valor < saldo) {
-			if (tipo==1) {super.saldo = (super.saldo-valor) +valor*0.02;}
-			if (tipo==2) {super.saldo = (super.saldo-valor)+ valor*0.05;}
-			if (tipo==3) {super.saldo = (super.saldo-valor)+ valor*0.08;}
+			if (tipo==1) {super.saldo =valor*0.02;}
+			if (tipo==2) {super.saldo =valor*0.05;}
+			if (tipo==3) {super.saldo =valor*0.08;}
 			return true;
 		} else { return false;}
 		

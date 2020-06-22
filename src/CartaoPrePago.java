@@ -18,7 +18,7 @@ public class CartaoPrePago {
 		saldo += valor;
 	}
 	public boolean Comprar(double valor) {
-		if (valor < this.saldo) {
+		if (valor <= this.saldo) {
 			this.saldo -= valor;
 			return true;
 		} else {
